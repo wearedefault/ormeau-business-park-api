@@ -368,6 +368,7 @@ export interface ApiEnquiryEnquiry extends Schema.CollectionType {
     singularName: 'enquiry';
     pluralName: 'enquiries';
     displayName: 'Enquiries';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -381,6 +382,11 @@ export interface ApiEnquiryEnquiry extends Schema.CollectionType {
     referral: Attribute.Boolean;
     referralSource: Attribute.String;
     type: Attribute.Enumeration<['Website', 'Phone', 'Walk In']>;
+    user: Attribute.Relation<
+      'api::enquiry.enquiry',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -624,7 +630,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -653,6 +658,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    firstName: Attribute.String;
+    lastName: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "enquiry",
     "pluralName": "enquiries",
-    "displayName": "Enquiries"
+    "displayName": "Enquiries",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -39,6 +40,11 @@
         "Phone",
         "Walk In"
       ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

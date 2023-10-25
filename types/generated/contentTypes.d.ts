@@ -381,12 +381,13 @@ export interface ApiEnquiryEnquiry extends Schema.CollectionType {
     message: Attribute.Text;
     referral: Attribute.Boolean;
     referralSource: Attribute.String;
-    type: Attribute.Enumeration<['Website', 'Phone', 'Walk In']>;
     user: Attribute.Relation<
       'api::enquiry.enquiry',
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    source: Attribute.String;
+    type: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

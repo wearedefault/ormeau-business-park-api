@@ -33,18 +33,16 @@
     "referralSource": {
       "type": "string"
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "Website",
-        "Phone",
-        "Walk In"
-      ]
-    },
     "user": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "source": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

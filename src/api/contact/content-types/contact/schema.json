@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contact",
     "pluralName": "contacts",
-    "displayName": "Contacts"
+    "displayName": "Contacts",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,14 +15,26 @@
     "name": {
       "type": "string"
     },
-    "email": {
-      "type": "string"
-    },
     "phone": {
       "type": "string"
     },
     "businessName": {
       "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
     }
   }
 }

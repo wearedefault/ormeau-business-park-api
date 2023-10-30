@@ -400,6 +400,87 @@ export interface ApiContactContact extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactsNoteContactsNote extends Schema.CollectionType {
+  collectionName: 'contacts_notes';
+  info: {
+    singularName: 'contacts-note';
+    pluralName: 'contacts-notes';
+    displayName: 'Contacts Notes';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    note: Attribute.Text;
+    contact: Attribute.Relation<
+      'api::contacts-note.contacts-note',
+      'oneToOne',
+      'api::contact.contact'
+    >;
+    user: Attribute.Relation<
+      'api::contacts-note.contacts-note',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contacts-note.contacts-note',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contacts-note.contacts-note',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEnquiriesNoteEnquiriesNote extends Schema.CollectionType {
+  collectionName: 'enquiries_notes';
+  info: {
+    singularName: 'enquiries-note';
+    pluralName: 'enquiries-notes';
+    displayName: 'Enquiries Notes';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    note: Attribute.Text;
+    enquiry: Attribute.Relation<
+      'api::enquiries-note.enquiries-note',
+      'oneToOne',
+      'api::enquiry.enquiry'
+    >;
+    user: Attribute.Relation<
+      'api::enquiries-note.enquiries-note',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::enquiries-note.enquiries-note',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::enquiries-note.enquiries-note',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEnquiryEnquiry extends Schema.CollectionType {
   collectionName: 'enquiries';
   info: {
@@ -772,6 +853,8 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::contact.contact': ApiContactContact;
+      'api::contacts-note.contacts-note': ApiContactsNoteContactsNote;
+      'api::enquiries-note.enquiries-note': ApiEnquiriesNoteEnquiriesNote;
       'api::enquiry.enquiry': ApiEnquiryEnquiry;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

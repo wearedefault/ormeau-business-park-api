@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enquiries_notes",
+  "info": {
+    "singularName": "enquiries-note",
+    "pluralName": "enquiries-notes",
+    "displayName": "Enquiries Notes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "note": {
+      "type": "text"
+    },
+    "enquiry": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::enquiry.enquiry"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

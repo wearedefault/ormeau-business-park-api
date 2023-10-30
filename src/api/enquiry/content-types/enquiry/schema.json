@@ -47,6 +47,9 @@
     "isNew": {
       "type": "boolean",
       "default": true
+    },
+    "reminderDate": {
+      "type": "date"
     }
   }
 }

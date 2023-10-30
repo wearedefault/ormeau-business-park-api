@@ -508,6 +508,7 @@ export interface ApiEnquiryEnquiry extends Schema.CollectionType {
     source: Attribute.String;
     type: Attribute.String;
     isNew: Attribute.Boolean & Attribute.DefaultTo<true>;
+    reminderDate: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

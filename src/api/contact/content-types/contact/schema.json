@@ -35,6 +35,18 @@
     },
     "notes": {
       "type": "text"
+    },
+    "addressLine1": {
+      "type": "string"
+    },
+    "addressLine2": {
+      "type": "string"
+    },
+    "addressTown": {
+      "type": "string"
+    },
+    "addressPostcode": {
+      "type": "string"
     }
   }
 }

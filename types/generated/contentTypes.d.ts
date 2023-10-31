@@ -382,6 +382,10 @@ export interface ApiContactContact extends Schema.CollectionType {
     industry: Attribute.String;
     category: Attribute.String;
     notes: Attribute.Text;
+    addressLine1: Attribute.String;
+    addressLine2: Attribute.String;
+    addressTown: Attribute.String;
+    addressPostcode: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
